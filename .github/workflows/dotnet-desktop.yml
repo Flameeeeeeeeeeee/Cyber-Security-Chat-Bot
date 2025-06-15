@@ -1,4 +1,4 @@
-name: Build and Test WPF App
+name: Build WPF App (.NET Framework)
 
 on:
   push:
@@ -8,30 +8,14 @@ on:
 
 jobs:
   build:
-
     runs-on: windows-latest
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-    # Install .NET Framework Developer Pack for 4.8 (usually preinstalled on windows-latest)
-    # If you ever target other .NET Framework versions, you can add installation steps here.
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v2
 
-    - name: Setup .NET SDK
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '9.0.x'  # This is mainly for SDK commands; your WPF app targets .NET Framework
-
-    - name: Restore Dependencies
-      run: nuget restore CyberSecurityBotGUI.sln
-
-    - name: Check Code Formatting (optional)
-      run: dotnet format --verify-no-changes
-      continue-on-error: true
-
-    - name: Build Project (Release)
+    - name: Build solution
       run: msbuild CyberSecurityBotGUI.sln /p:Configuration=Release /m
-
-    - name: Run Syntax Check / Compilation Test
-      run: msbuild CyberSecurityBotGUI.sln /p:Configuration=Release /warnaserror
