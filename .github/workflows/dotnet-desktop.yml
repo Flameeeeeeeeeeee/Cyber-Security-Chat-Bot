@@ -1,35 +1,37 @@
-name: C# Console App CI
+name: Build and Test WPF App
 
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-  
+
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v4
 
-    - name: Setup .NET
+    # Install .NET Framework Developer Pack for 4.8 (usually preinstalled on windows-latest)
+    # If you ever target other .NET Framework versions, you can add installation steps here.
+
+    - name: Setup .NET SDK
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '9.0.x'
+        dotnet-version: '9.0.x'  # This is mainly for SDK commands; your WPF app targets .NET Framework
 
     - name: Restore Dependencies
-      run: dotnet restore
+      run: nuget restore CyberSecurityBotGUI.sln
 
-    - name: Check Code Formatting
+    - name: Check Code Formatting (optional)
       run: dotnet format --verify-no-changes
-      continue-on-error: true # optional — you can set to false to fail if not formatted
+      continue-on-error: true
 
-    - name: Build Project
-      run: dotnet build --no-restore --configuration Release
+    - name: Build Project (Release)
+      run: msbuild CyberSecurityBotGUI.sln /p:Configuration=Release /m
 
     - name: Run Syntax Check / Compilation Test
-      run: dotnet build --no-restore --configuration Release --warnaserror
-
+      run: msbuild CyberSecurityBotGUI.sln /p:Configuration=Release /warnaserror
