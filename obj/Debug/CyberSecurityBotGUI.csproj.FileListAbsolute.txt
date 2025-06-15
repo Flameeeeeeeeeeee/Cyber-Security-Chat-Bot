@@ -1,0 +1,16 @@
+C:\Users\lab_services_student\Desktop\ChatBotGUI\CyberSecurityBotGUI\obj\Debug\CyberSecurityBotGUI.csproj.AssemblyReference.cache
+C:\Users\lab_services_student\Desktop\ChatBotGUI\CyberSecurityBotGUI\obj\Debug\MainWindow.baml
+C:\Users\lab_services_student\Desktop\ChatBotGUI\CyberSecurityBotGUI\obj\Debug\MainWindow.g.cs
+C:\Users\lab_services_student\Desktop\ChatBotGUI\CyberSecurityBotGUI\obj\Debug\App.g.cs
+C:\Users\lab_services_student\Desktop\ChatBotGUI\CyberSecurityBotGUI\obj\Debug\CyberSecurityBotGUI_MarkupCompile.cache
+C:\Users\lab_services_student\Desktop\ChatBotGUI\CyberSecurityBotGUI\obj\Debug\CyberSecurityBotGUI.g.resources
+C:\Users\lab_services_student\Desktop\ChatBotGUI\CyberSecurityBotGUI\obj\Debug\CyberSecurityBotGUI.Properties.Resources.resources
+C:\Users\lab_services_student\Desktop\ChatBotGUI\CyberSecurityBotGUI\obj\Debug\CyberSecurityBotGUI.csproj.GenerateResource.cache
+C:\Users\lab_services_student\Desktop\ChatBotGUI\CyberSecurityBotGUI\obj\Debug\CyberSecurityBotGUI.csproj.CoreCompileInputs.cache
+C:\Users\lab_services_student\Desktop\ChatBotGUI\CybersecuritybotGUI\bin\Debug\CyberSecurityBotGUI.exe.config
+C:\Users\lab_services_student\Desktop\ChatBotGUI\CybersecuritybotGUI\bin\Debug\CyberSecurityBotGUI.exe
+C:\Users\lab_services_student\Desktop\ChatBotGUI\CybersecuritybotGUI\bin\Debug\CyberSecurityBotGUI.pdb
+C:\Users\lab_services_student\Desktop\ChatBotGUI\CybersecuritybotGUI\obj\Debug\CyberSecurityBotGUI_Content.g.cs
+C:\Users\lab_services_student\Desktop\ChatBotGUI\CybersecuritybotGUI\obj\Debug\CyberSecurityBotGUI.exe
+C:\Users\lab_services_student\Desktop\ChatBotGUI\CybersecuritybotGUI\obj\Debug\CyberSecurityBotGUI.pdb
+C:\Users\lab_services_student\Desktop\ChatBotGUI\CybersecuritybotGUI\bin\Debug\Resources\ttsmaker-file-2025-4-19-1-24-16.wav
