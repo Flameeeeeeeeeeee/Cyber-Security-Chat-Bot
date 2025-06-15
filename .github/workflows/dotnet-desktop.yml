@@ -1,35 +1,21 @@
-name: C# Console App CI
+name: Build WPF App (.NET Framework)
 
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-  
+
 jobs:
   build:
-
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '9.0.x'
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v2
 
-    - name: Restore Dependencies
-      run: dotnet restore
-
-    - name: Check Code Formatting
-      run: dotnet format --verify-no-changes
-      continue-on-error: true # optional — you can set to false to fail if not formatted
-
-    - name: Build Project
-      run: dotnet build --no-restore --configuration Release
-
-    - name: Run Syntax Check / Compilation Test
-      run: dotnet build --no-restore --configuration Release --warnaserror
-
+    - name: Build solution
+      run: msbuild CyberSecurityBotGUI.sln /p:Configuration=Release /m
