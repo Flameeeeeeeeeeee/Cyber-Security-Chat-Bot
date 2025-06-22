@@ -57,6 +57,8 @@
     </ApplicationDefinition>
     <Compile Include="CyberData.cs" />
     <Compile Include="InputValidator.cs" />
+    <Compile Include="Questions.cs" />
+    <Compile Include="QuizManager.cs" />
     <Compile Include="StartUpService.cs" />
     <Compile Include="TaskManager.cs" />
     <Compile Include="TextEffects.cs" />

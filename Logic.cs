@@ -4,30 +4,28 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using CyberSecurityBotGUI;
 using CyberSecurityBotGUI.TaskLogic;
+using CyberSecurityBotGUI.QuizLogic;
 
 namespace CyberSecurityBotGUI.Logic
 {
     public class ChatBotLogic
     {
         private readonly Random _random = new Random();
-
         private string _userName;
         private string _currentTopicKey;
-
-        private readonly Dictionary<string, int> _topicRequestCounts =
-            new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
-
+        private readonly Dictionary<string, int> _topicRequestCounts = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
         private readonly TaskManager _taskManager = new TaskManager();
+        private TaskItem _lastAddedTask = null;
+        private string _lastPrompt = null;
+        private readonly QuizManager _quizManager = new QuizManager();
 
         public bool HasUserName => !string.IsNullOrWhiteSpace(_userName);
 
         public string StartConversation()
         {
-            return
-                "👋 Hello! Welcome to CyberSecurityBot.\n" +
-                "Before we get started, what's your name?";
+            return "👋 Hello! Welcome to CyberSecurityBot.\nWhat's your name?";
         }
-
+        //master input method
         public string ProcessUserInput(string input)
         {
             input = input?.Trim() ?? "";
@@ -35,74 +33,149 @@ namespace CyberSecurityBotGUI.Logic
             if (!HasUserName)
             {
                 _userName = SanitizeName(input);
-                return $"Nice to meet you {_userName}! How can I help you stay safe online today?\n" +
-                        CyberData.MenuText;
+                return $"Nice to meet you, {_userName}! How can I assist you with cybersecurity today?\n{CyberData.MenuText}";
+
+            }
+            // Start the Quiz
+            if (input.Equals("start quiz", StringComparison.OrdinalIgnoreCase))
+            {
+                return _quizManager.StartQuiz();
             }
 
-            // --- Task Assistant Commands ---
-            //add task
-             if (input.StartsWith("add task", StringComparison.OrdinalIgnoreCase))
+            // If user is answering quiz questions
+            if (_quizManager.IsQuizActive)
+            {
+                return _quizManager.SubmitAnswer(input);
+            }
+
+
+            // Add Task
+            if (input.StartsWith("add task", StringComparison.OrdinalIgnoreCase))
             {
                 string taskText = input.Substring("add task".Length).Trim();
-
                 if (string.IsNullOrWhiteSpace(taskText))
                     return "Please provide a task title after 'add task'.";
 
-                // You can optionally split the title and description more smartly here
                 string title = taskText;
-                string description = $"Task: {taskText}";
+                string description = $"Review or perform task: {taskText}";
 
-                return _taskManager.AddTask(title, description, null);
+                string response = _taskManager.AddTask(title, description, null);
+                _lastAddedTask = _taskManager.GetLastTask(); // Save reference to allow follow-up
+                return $"{response} Would you like a reminder?";
             }
 
-            //view tasks
-            else if (input.Equals("view tasks", StringComparison.OrdinalIgnoreCase))
+            // When user says yes after bot asks about reminder
+            // 1. If user says "yes" and we just added a task without a reminder
+            if ((input.Equals("yes", StringComparison.OrdinalIgnoreCase) || input.Equals("sure", StringComparison.OrdinalIgnoreCase))
+                && _lastAddedTask != null && !_lastAddedTask.ReminderDate.HasValue
+                && _lastPrompt != "waiting-for-reminder-time")
             {
-                return _taskManager.ViewTasks();
+                _lastPrompt = "waiting-for-reminder-time";
+                return "Great! Please tell me how long — e.g., 'Remind me in 3 days.'";
             }
-            //complete task
-            else if (input.StartsWith("complete task", StringComparison.OrdinalIgnoreCase))
+
+            // 2. If waiting for reminder time
+            if (_lastPrompt == "waiting-for-reminder-time" && _lastAddedTask != null)
+            {
+                var match = Regex.Match(input, @"remind me in (\d+)\s*(minute|minutes|hour|hours|day|days|week|weeks)", RegexOptions.IgnoreCase);
+                if (match.Success)
+                {
+                    int number = int.Parse(match.Groups[1].Value);
+                    string unit = match.Groups[2].Value.ToLower();
+
+                    DateTime reminderDate = DateTime.Now;
+
+                    switch (unit)
+                    {
+                        case "minute":
+                        case "minutes":
+                            reminderDate = reminderDate.AddMinutes(number);
+                            break;
+
+                        case "hour":
+                        case "hours":
+                            reminderDate = reminderDate.AddHours(number);
+                            break;
+
+                        case "day":
+                        case "days":
+                            reminderDate = reminderDate.AddDays(number);
+                            break;
+
+                        case "week":
+                        case "weeks":
+                            reminderDate = reminderDate.AddDays(number * 7);
+                            break;
+                    }
+
+                    _lastAddedTask.ReminderDate = reminderDate;
+                    _lastPrompt = null;  // reset prompt after success
+                    return $"Got it! I'll remind you in {number} {unit}.";
+                }
+                else
+                {
+                    return "Sorry, I couldn't understand that. Please say something like 'Remind me in 5 minutes' or 'Remind me in 3 days.'";
+                }
+            }
+
+
+
+            // View Tasks
+            if (input.Equals("view tasks", StringComparison.OrdinalIgnoreCase))
+                return _taskManager.ViewTasks();
+
+            // Complete Task
+            if (input.StartsWith("complete task", StringComparison.OrdinalIgnoreCase))
             {
                 var indexStr = input.Substring("complete task".Length).Trim();
-                int index;
-                if (int.TryParse(indexStr, out index))
-                    return _taskManager.CompleteTask(index - 1); // -1 if user counts from 1
-                else
-                    return "Please provide a valid task number to complete.";
+                if (int.TryParse(indexStr, out int index))
+                    return _taskManager.CompleteTask(index);
+                return "Please provide a valid task number to complete.";
             }
-            //Delete Task
-            else if (input.StartsWith("delete task", StringComparison.OrdinalIgnoreCase))
+
+            // Delete Task
+            if (input.StartsWith("delete task", StringComparison.OrdinalIgnoreCase))
             {
                 var indexStr = input.Substring("delete task".Length).Trim();
-                int index;
-                if (int.TryParse(indexStr, out index))
-                    return _taskManager.DeleteTask(index - 1); // Assuming task list is 1-indexed for user
-                else
-                    return "Please provide a valid task number to delete.";
+                if (int.TryParse(indexStr, out int index))
+                    return _taskManager.DeleteTask(index);
+                return "Please provide a valid task number to delete.";
             }
 
-
-            // --- Greetings ---
+            // Greetings
             string greetingResponse = TryGetGreetingResponse(input);
             if (greetingResponse != null)
-            {
                 return $"{_userName}, {greetingResponse}";
-            }
 
-            // --- Help/Menu ---
+            // Help/Menu
             if (IsHelpRequest(input))
-            {
                 return CyberData.MenuText;
-            }
 
-            // --- Sentiment Detection ---
+            // Sentiment Detection
             string sentimentResponse = TryGetSentimentResponse(input);
             if (sentimentResponse != null)
-            {
+            
+
+            
                 return $"{_userName}, {sentimentResponse}";
+            // Handle numeric menu selections (1-6)
+            switch (input)
+            {
+                case "1":
+                    return $"{_userName}, {GetRandomResponse(CyberData.RegexResponses["password"].Responses)}";
+                case "2":
+                    return $"{_userName}, {GetRandomResponse(CyberData.RegexResponses["phishing"].Responses)}";
+                case "3":
+                    return $"{_userName}, {GetRandomResponse(CyberData.RegexResponses["browsing"].Responses)}";
+                case "4":
+                    return $"{_userName}, {GetRandomResponse(CyberData.RegexResponses["vpn"].Responses)}";
+                case "5":
+                    return $"{_userName}, {GetRandomResponse(CyberData.RegexResponses["privacy"].Responses)}";
+                case "6":
+                    return _quizManager.StartQuiz(); // If quiz manager exists
             }
 
-            // --- Cybersecurity Topic Matching ---
+            // Topic Matching
             var topicMatch = TryMatchTopic(input);
             if (topicMatch != null)
             {
@@ -113,32 +186,29 @@ namespace CyberSecurityBotGUI.Logic
                 else
                     _topicRequestCounts[_currentTopicKey] = 1;
 
+                string baseResponse = GetRandomResponse(topicMatch.Value.Value.Responses);
                 if (_topicRequestCounts[_currentTopicKey] > 1 &&
                     CyberData.PersistentInterestResponses.ContainsKey(_currentTopicKey))
                 {
-                    return $"{GetRandomResponse(CyberData.PersistentInterestResponses[_currentTopicKey])}\n" +
-                           GetRandomResponse(CyberData.RegexResponses[_currentTopicKey].Responses);
+                    string persistence = GetRandomResponse(CyberData.PersistentInterestResponses[_currentTopicKey]);
+                    return $"{persistence}\n{baseResponse}";
                 }
 
-                return $"{GetRandomResponse(topicMatch.Value.Value.Responses)}";
+                return baseResponse;
             }
 
-            // --- Fallback to Last Topic ---
+            // Continue from last topic
             if (!string.IsNullOrEmpty(_currentTopicKey))
-            {
                 return $"{_userName}, {GetRandomResponse(CyberData.RegexResponses[_currentTopicKey].Responses)}";
-            }
 
-            // --- Default Fallback ---
-            return $"Sorry {_userName}, I’m not sure I understand. Could you try rephrasing or ask about topics like passwords, phishing, or privacy?";
+            return $"Sorry {_userName}, I’m not sure I understand. Try asking about topics like passwords, phishing, or privacy.";
         }
 
-        // Utility Methods
+        // Utility methods
         private string SanitizeName(string input)
         {
             if (string.IsNullOrWhiteSpace(input))
                 return "Friend";
-
             input = input.Trim();
             return char.ToUpper(input[0]) + input.Substring(1).ToLower();
         }
@@ -155,10 +225,7 @@ namespace CyberSecurityBotGUI.Logic
             foreach (var key in CyberData.BotStatusResponses.Keys)
             {
                 if (lower.Contains(key))
-                {
-                    var responses = CyberData.BotStatusResponses[key];
-                    return GetRandomResponse(responses);
-                }
+                    return GetRandomResponse(CyberData.BotStatusResponses[key]);
             }
             return null;
         }
@@ -169,9 +236,7 @@ namespace CyberSecurityBotGUI.Logic
             foreach (var sentimentKey in CyberData.SentimentKeywords.Keys)
             {
                 if (lower.Contains(sentimentKey))
-                {
                     return CyberData.SentimentKeywords[sentimentKey];
-                }
             }
             return null;
         }
@@ -180,11 +245,8 @@ namespace CyberSecurityBotGUI.Logic
         {
             foreach (var kvp in CyberData.RegexResponses)
             {
-                var regex = new Regex(kvp.Value.Pattern, RegexOptions.IgnoreCase);
-                if (regex.IsMatch(input))
-                {
+                if (Regex.IsMatch(input, kvp.Value.Pattern, RegexOptions.IgnoreCase))
                     return kvp;
-                }
             }
             return null;
         }
@@ -192,8 +254,7 @@ namespace CyberSecurityBotGUI.Logic
         private string GetRandomResponse(string[] responses)
         {
             if (responses == null || responses.Length == 0) return "";
-            int idx = _random.Next(responses.Length);
-            return responses[idx];
+            return responses[_random.Next(responses.Length)];
         }
     }
 }

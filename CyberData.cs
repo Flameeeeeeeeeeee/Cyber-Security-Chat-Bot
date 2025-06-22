@@ -221,7 +221,8 @@ namespace CyberSecurityBotGUI
                 "3. Safe Browsing\n" +
                 "4. VPNs\n" +
                 "5. Privacy\n" +
-                "Type 1-5, or just ask naturally. Type 'help' to see this menu again.\n";
+                "6. Take Quiz\n" +
+                "Type 1-6, or just ask naturally. Type 'help' to see this menu again.\n";
         }
     }
 

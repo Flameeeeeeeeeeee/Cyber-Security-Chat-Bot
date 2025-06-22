@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace CyberSecurityBotGUI.TaskLogic
@@ -81,5 +82,10 @@ namespace CyberSecurityBotGUI.TaskLogic
             tasks.RemoveAt(taskIndex - 1);
             return $"Task '{title}' has been deleted.";
         }
+        public TaskItem GetLastTask()
+        {
+            return tasks.LastOrDefault();
+        }
+
     }
 }
