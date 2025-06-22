@@ -58,6 +58,7 @@
     <Compile Include="CyberData.cs" />
     <Compile Include="InputValidator.cs" />
     <Compile Include="StartUpService.cs" />
+    <Compile Include="TaskManager.cs" />
     <Compile Include="TextEffects.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

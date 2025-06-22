@@ -24,7 +24,7 @@ namespace CyberSecurityBotGUI
             chatBot = new ChatBotLogic();
 
             // Optional: Add a welcome message from the bot
-            AddBotMessage("Welcome! How can I assist you with cybersecurity today?");
+            AddBotMessage("Welcome! Please let me know what your name is and we can get started!");
         }
 
         private void SendButton_Click(object sender, RoutedEventArgs e)
@@ -45,14 +45,14 @@ namespace CyberSecurityBotGUI
         // Adds user's message to the ChatDisplayTextBox
         private void AddUserMessage(string message)
         {
-            ChatDisplayTextBox.AppendText($"You: {message}\n");
+            ChatDisplayTextBox.AppendText($"You: {message}\n\n");
             ChatDisplayTextBox.ScrollToEnd();
         }
 
         // Adds bot's response to the ChatDisplayTextBox
         private void AddBotMessage(string message)
         {
-            ChatDisplayTextBox.AppendText($"Bot: {message}\n");
+            ChatDisplayTextBox.AppendText($"Bot: {message}\n\n");
             ChatDisplayTextBox.ScrollToEnd();
         }
     }
