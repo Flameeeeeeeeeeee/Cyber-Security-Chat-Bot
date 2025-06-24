@@ -3,44 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\lab_services_student\\Desktop\\ChatBotGUI\\CyberSecurityBotGUI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|c:\\users\\lab_services_student\\desktop\\chatbotgui\\cybersecuritybotgui\\logic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|solutionrelative:logic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|C:\\Users\\lab_services_student\\Desktop\\ChatBotGUI\\CyberSecurityBotGUI\\quizmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|solutionrelative:quizmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|C:\\Users\\lab_services_student\\Desktop\\ChatBotGUI\\CyberSecurityBotGUI\\cyberdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|solutionrelative:cyberdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|c:\\users\\lab_services_student\\desktop\\chatbotgui\\cybersecuritybotgui\\questions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|C:\\Users\\lab_services_student\\Desktop\\ChatBotGUI\\CyberSecurityBotGUI\\questions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|solutionrelative:questions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|c:\\users\\lab_services_student\\desktop\\chatbotgui\\cybersecuritybotgui\\quizmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|solutionrelative:quizmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|C:\\Users\\lab_services_student\\Desktop\\ChatBotGUI\\CyberSecurityBotGUI\\logic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|solutionrelative:logic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|C:\\Users\\lab_services_student\\Desktop\\ChatBotGUI\\CyberSecurityBotGUI\\taskmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|solutionrelative:taskmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|C:\\Users\\lab_services_student\\Desktop\\ChatBotGUI\\CyberSecurityBotGUI\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|C:\\Users\\lab_services_student\\Desktop\\ChatBotGUI\\CyberSecurityBotGUI\\cyberdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|solutionrelative:cyberdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|c:\\users\\lab_services_student\\desktop\\chatbotgui\\cybersecuritybotgui\\startupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|solutionrelative:startupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|C:\\Users\\lab_services_student\\Desktop\\ChatBotGUI\\CyberSecurityBotGUI\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|C:\\Users\\lab_services_student\\Desktop\\ChatBotGUI\\CyberSecurityBotGUI\\inputvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|solutionrelative:inputvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|C:\\Users\\lab_services_student\\Desktop\\ChatBotGUI\\CyberSecurityBotGUI\\texteffects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|solutionrelative:texteffects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|C:\\Users\\lab_services_student\\Desktop\\ChatBotGUI\\CyberSecurityBotGUI\\startupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|solutionrelative:startupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|C:\\Users\\lab_services_student\\Desktop\\ChatBotGUI\\CyberSecurityBotGUI\\activitylogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|solutionrelative:activitylogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|C:\\Users\\lab_services_student\\Desktop\\ChatBotGUI\\CyberSecurityBotGUI\\inputvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|solutionrelative:inputvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|C:\\Users\\lab_services_student\\Desktop\\ChatBotGUI\\CyberSecurityBotGUI\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D16359B-8F68-478A-9263-40C076728AC3}|CyberSecurityBotGUI.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,71 +62,84 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
+              "Title": "ActivityLogger.cs",
+              "DocumentMoniker": "C:\\Users\\lab_services_student\\Desktop\\ChatBotGUI\\CyberSecurityBotGUI\\ActivityLogger.cs",
+              "RelativeDocumentMoniker": "ActivityLogger.cs",
+              "ToolTip": "C:\\Users\\lab_services_student\\Desktop\\ChatBotGUI\\CyberSecurityBotGUI\\ActivityLogger.cs",
+              "RelativeToolTip": "ActivityLogger.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T21:08:34.47Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Questions.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Desktop\\ChatBotGUI\\CyberSecurityBotGUI\\Questions.cs",
               "RelativeDocumentMoniker": "Questions.cs",
               "ToolTip": "C:\\Users\\lab_services_student\\Desktop\\ChatBotGUI\\CyberSecurityBotGUI\\Questions.cs",
               "RelativeToolTip": "Questions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-22T10:03:39.667Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "QuizManager.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Desktop\\ChatBotGUI\\CyberSecurityBotGUI\\QuizManager.cs",
               "RelativeDocumentMoniker": "QuizManager.cs",
               "ToolTip": "C:\\Users\\lab_services_student\\Desktop\\ChatBotGUI\\CyberSecurityBotGUI\\QuizManager.cs",
               "RelativeToolTip": "QuizManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAcwF4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-22T09:56:35.482Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "TaskManager.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Desktop\\ChatBotGUI\\CyberSecurityBotGUI\\TaskManager.cs",
               "RelativeDocumentMoniker": "TaskManager.cs",
               "ToolTip": "C:\\Users\\lab_services_student\\Desktop\\ChatBotGUI\\CyberSecurityBotGUI\\TaskManager.cs",
               "RelativeToolTip": "TaskManager.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAwFgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-22T03:51:08.203Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "CyberData.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Desktop\\ChatBotGUI\\CyberSecurityBotGUI\\CyberData.cs",
               "RelativeDocumentMoniker": "CyberData.cs",
               "ToolTip": "C:\\Users\\lab_services_student\\Desktop\\ChatBotGUI\\CyberSecurityBotGUI\\CyberData.cs",
               "RelativeToolTip": "CyberData.cs",
-              "ViewState": "AgIAAMUAAAAAAAAAAAAQwOAAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAOUAAAAAAAAAAAAgwOoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-14T15:12:16.327Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
               "Title": "StartUpService.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Desktop\\ChatBotGUI\\CyberSecurityBotGUI\\StartUpService.cs",
               "RelativeDocumentMoniker": "StartUpService.cs",
               "ToolTip": "C:\\Users\\lab_services_student\\Desktop\\ChatBotGUI\\CyberSecurityBotGUI\\StartUpService.cs",
               "RelativeToolTip": "StartUpService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwCUAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-14T14:03:22.614Z"
+              "WhenOpened": "2025-06-14T14:03:22.614Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 7,
               "Title": "InputValidator.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Desktop\\ChatBotGUI\\CyberSecurityBotGUI\\InputValidator.cs",
               "RelativeDocumentMoniker": "InputValidator.cs",
@@ -134,7 +151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "TextEffects.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Desktop\\ChatBotGUI\\CyberSecurityBotGUI\\TextEffects.cs",
               "RelativeDocumentMoniker": "TextEffects.cs",
@@ -146,13 +163,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Logic.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Desktop\\ChatBotGUI\\CyberSecurityBotGUI\\Logic.cs",
               "RelativeDocumentMoniker": "Logic.cs",
               "ToolTip": "C:\\Users\\lab_services_student\\Desktop\\ChatBotGUI\\CyberSecurityBotGUI\\Logic.cs",
               "RelativeToolTip": "Logic.cs",
-              "ViewState": "AgIAAIMAAAAAAAAAAAAwwI4AAAANAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAowCsAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-14T13:03:44.525Z",
               "EditorCaption": ""
@@ -170,7 +187,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Desktop\\ChatBotGUI\\CyberSecurityBotGUI\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",

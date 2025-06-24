@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.Text.RegularExpressions;
+using CyberSecurityBotGUI.Data;
 namespace CyberSecurityBotGUI.QuizLogic
 {
     public class QuizManager
@@ -68,6 +69,7 @@ namespace CyberSecurityBotGUI.QuizLogic
             string normalizedCorrectAnswer = question.CorrectAnswer.Trim().ToLowerInvariant();
 
             string feedback;
+            string cleanExplanation = Regex.Replace(question.Explanation, @"^(Correct|Exactly|Good job|Right)[!:\s-]*", "", RegexOptions.IgnoreCase).Trim();
 
             if (normalizedUserAnswer == normalizedCorrectAnswer)
             {
@@ -76,7 +78,7 @@ namespace CyberSecurityBotGUI.QuizLogic
             }
             else
             {
-                feedback = $"❌ Incorrect. The correct answer was '{question.CorrectAnswer}'.\nℹ️ {question.Explanation}";
+                feedback = $"❌ Incorrect. The correct answer was '{question.CorrectAnswer}'.\n💡 Tip: {cleanExplanation}";
             }
 
             _currentQuestionIndex++;
@@ -84,7 +86,6 @@ namespace CyberSecurityBotGUI.QuizLogic
             if (_currentQuestionIndex < _questions.Count)
             {
                 return feedback + "\n\n" + GetCurrentQuestionText();
-
             }
             else
             {
@@ -96,6 +97,8 @@ namespace CyberSecurityBotGUI.QuizLogic
 
         private string GetFinalScore()
         {
+            _isQuizActive = false; // Reset quiz state
+
             string feedback;
 
             if (_score == _questions.Count)
@@ -111,8 +114,10 @@ namespace CyberSecurityBotGUI.QuizLogic
                 feedback = "📘 Keep learning to stay safe online. Practice makes perfect!";
             }
 
-            return $"🏁 Quiz Complete!\nYou scored {_score} out of {_questions.Count}.\n\n{feedback}";
+            return $"🏁 Quiz Complete!\nYou scored {_score} out of {_questions.Count}.\n\n{feedback}\n\n" +
+                   "Would you like to do something else?\n" + CyberData.MenuText;
         }
+
 
     }
 }

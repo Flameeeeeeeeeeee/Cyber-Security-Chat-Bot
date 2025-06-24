@@ -9,9 +9,9 @@ namespace CyberSecurityBotGUI.StartUpServices
     {
         private const string AudioFilePath = @"Resources\\ttsmaker-file-2025-4-19-1-24-16.wav";
 
-        /// <summary>
-        /// Plays a WAV file for a voice greeting.
-        /// </summary>
+       
+        // Plays a WAV file for a voice greeting.
+        
         public static void PlayVoiceGreeting()
         {
             try
@@ -34,9 +34,9 @@ namespace CyberSecurityBotGUI.StartUpServices
             }
         }
 
-        /// <summary>
+        
         /// Returns an ASCII banner string (to be displayed in the UI).
-        /// </summary>
+        
         public static string GetAsciiArt()
         {
             return
@@ -46,9 +46,9 @@ namespace CyberSecurityBotGUI.StartUpServices
 ╚════════════════════════════════════════════════════╝";
         }
 
-        /// <summary>
-        /// Returns a divider string (e.g., for TextBlocks or Logs).
-        /// </summary>
+       
+        // Returns a divider string (e.g., for TextBlocks or Logs).
+        
         public static string GetDivider()
         {
             return new string('-', 55);

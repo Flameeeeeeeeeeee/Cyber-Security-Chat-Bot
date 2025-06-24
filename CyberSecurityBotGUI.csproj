@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ActivityLogger.cs" />
     <Compile Include="CyberData.cs" />
     <Compile Include="InputValidator.cs" />
     <Compile Include="Questions.cs" />

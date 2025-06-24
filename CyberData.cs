@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CyberSecurityBotGUI.Logic;
 
-
-namespace CyberSecurityBotGUI
+namespace CyberSecurityBotGUI.Data
 {
-    
 
-  
-        public static class CyberData
-        {
-            public static string JoinLines(params string[] lines) => string.Join("\n", lines);
 
-            // Sentiment keywords mapped to chatbot empathetic responses
-            public static readonly Dictionary<string, string> SentimentKeywords = new Dictionary<string, string>()
+
+    public static class CyberData
+    {
+        public static string JoinLines(params string[] lines) => string.Join("\n", lines);
+
+        // Sentiment keywords mapped to chatbot empathetic responses
+        public static readonly Dictionary<string, string> SentimentKeywords = new Dictionary<string, string>()
         {
             // Worried / Anxious
             { "worried", "😟 It's okay to feel that way. Cybersecurity can be scary, but I'm here to help you through it." },
@@ -41,9 +41,9 @@ namespace CyberSecurityBotGUI
             { "thinking", "🧐 Thinking ahead is smart. What would you like to know more about?" }
         };
 
-            // Password safety advice variants
-            public static readonly string[] PasswordAdvice =
-            {
+        // Password safety advice variants
+        public static readonly string[] PasswordAdvice =
+        {
             JoinLines(
                 "🌟 Use long, unique and strong passwords for each site.",
                 "📛 Avoid using the same password for multiple sites.",
@@ -66,9 +66,9 @@ namespace CyberSecurityBotGUI
             )
         };
 
-            // Phishing advice variants
-            public static readonly string[] PhishingAdvice =
-            {
+        // Phishing advice variants
+        public static readonly string[] PhishingAdvice =
+        {
             JoinLines(
                 "⚠️ Be cautious with urgent or unexpected emails.",
                 "✅ Verify the sender’s email address carefully.",
@@ -91,9 +91,9 @@ namespace CyberSecurityBotGUI
             )
         };
 
-            // Safe browsing advice variants
-            public static readonly string[] BrowsingAdvice =
-            {
+        // Safe browsing advice variants
+        public static readonly string[] BrowsingAdvice =
+        {
             JoinLines(
                 "🚀 Always use HTTPS websites.",
                 "💬 Avoid clicking pop‑ups and suspicious ads.",
@@ -116,9 +116,9 @@ namespace CyberSecurityBotGUI
             )
         };
 
-            // VPN advice variants
-            public static readonly string[] VPNAdvice =
-            {
+        // VPN advice variants
+        public static readonly string[] VPNAdvice =
+        {
             JoinLines(
                 "🔒 Use a reliable VPN to encrypt your internet traffic.",
                 "🌍 VPNs help mask your IP address and protect your location.",
@@ -135,9 +135,9 @@ namespace CyberSecurityBotGUI
             )
         };
 
-            // Privacy advice variants
-            public static readonly string[] PrivacyAdvice =
-            {
+        // Privacy advice variants
+        public static readonly string[] PrivacyAdvice =
+        {
             JoinLines(
                 "🔐 Review and adjust your privacy settings on social media.",
                 "👀 Be cautious about what personal information you share online.",
@@ -154,8 +154,8 @@ namespace CyberSecurityBotGUI
             )
         };
 
-            // Regex keyword patterns matched to topic advice arrays
-            public static readonly Dictionary<string, (string Pattern, string[] Responses)> RegexResponses = new Dictionary<string, (string, string[])>()
+        // Regex keyword patterns matched to topic advice arrays
+        public static readonly Dictionary<string, (string Pattern, string[] Responses)> RegexResponses = new Dictionary<string, (string, string[])>()
         {
             { "password", (@"(?i)\b(password|credentials|login|pass key)\b", PasswordAdvice) },
             { "phishing", (@"(?i)\b(phishing|scam|fake email|fraud)\b", PhishingAdvice) },
@@ -164,8 +164,8 @@ namespace CyberSecurityBotGUI
             { "privacy", (@"(?i)\b(privacy|personal info|data protection|private)\b", PrivacyAdvice) }
         };
 
-            // User-friendly labels for each topic
-            public static readonly Dictionary<string, string> TopicLabels = new Dictionary<string, string>()
+        // User-friendly labels for each topic
+        public static readonly Dictionary<string, string> TopicLabels = new Dictionary<string, string>()
         {
             { "password", "passwords" },
             { "phishing", "phishing and scams" },
@@ -174,8 +174,8 @@ namespace CyberSecurityBotGUI
             { "privacy", "privacy" }
         };
 
-            // General bot responses to user status-type questions
-            public static readonly Dictionary<string, string[]> BotStatusResponses = new Dictionary<string, string[]>()
+        // General bot responses to user status-type questions
+        public static readonly Dictionary<string, string[]> BotStatusResponses = new Dictionary<string, string[]>()
         {
             {
                 "how are you", new[]
@@ -204,8 +204,8 @@ namespace CyberSecurityBotGUI
             }
         };
 
-            // Responses triggered when user repeatedly asks about the same topic
-            public static readonly Dictionary<string, string[]> PersistentInterestResponses = new Dictionary<string, string[]>()
+        // Responses triggered when user repeatedly asks about the same topic
+        public static readonly Dictionary<string, string[]> PersistentInterestResponses = new Dictionary<string, string[]>()
         {
             { "password", new[] { "🔁 You’ve brought up passwords a few times — it’s great that you're focused on this. Here’s another tip:" } },
             { "phishing", new[] { "🔁 It’s clear phishing and scams matter to you. Staying vigilant is smart — here's more advice:" } },
@@ -213,9 +213,17 @@ namespace CyberSecurityBotGUI
             { "vpn", new[] { "🔁 You’re really digging into VPNs — that’s awesome. One more set of tips for the road:" } },
             { "privacy", new[] { "🔁 You’ve asked about privacy multiple times — here’s another set of advice:" } }
         };
+        //affirmative key words
+        public static readonly string[] AffirmativeKeywords = new[] {
+            "yes", "sure", "okay", "ok", "yep", "yeah", "yup", "alright", "please", "remind", "of course", "i do", "i want a reminder"
+        };
 
-            // Main menu text shown to users
-            public const string MenuText =
+        //activity log commands
+        public static readonly string[] ActivityLogCommands = new[] {
+            "show activity log", "activity log", "what have you done for me", "show log", "view activity", "recent actions"
+        };
+        // Main menu text shown to users
+        public const string MenuText =
                 "\n1. Password Safety\n" +
                 "2. Phishing & Scams\n" +
                 "3. Safe Browsing\n" +
@@ -223,6 +231,7 @@ namespace CyberSecurityBotGUI
                 "5. Privacy\n" +
                 "6. Take Quiz\n" +
                 "Type 1-6, or just ask naturally. Type 'help' to see this menu again.\n";
-        }
     }
+
+}
 
