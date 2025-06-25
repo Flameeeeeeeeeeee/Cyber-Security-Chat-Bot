@@ -14,7 +14,7 @@
         public static bool IsQuitCommand(string input)
         {
             input = Normalize(input);
-            return input == "exit" || input == "quit" || input == "bye";
+            return input == "exit" || input == "quit" || input == "bye" || input == "goodbye";
         }
 
         // Check if the input is a help command

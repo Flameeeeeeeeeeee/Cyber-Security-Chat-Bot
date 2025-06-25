@@ -222,6 +222,7 @@ namespace CyberSecurityBotGUI.Data
         public static readonly string[] ActivityLogCommands = new[] {
             "show activity log", "activity log", "what have you done for me", "show log", "view activity", "recent actions"
         };
+
         // Main menu text shown to users
         public const string MenuText =
                 "\n1. Password Safety\n" +
@@ -231,7 +232,18 @@ namespace CyberSecurityBotGUI.Data
                 "5. Privacy\n" +
                 "6. Take Quiz\n" +
                 "Type 1-6, or just ask naturally. Type 'help' to see this menu again.\n";
-    }
 
+        public static readonly string[] ThanksResponses = new[]
+    {
+        "You’re welcome! Let me know if you need anything else.",
+        "No problem! Happy to help.",
+        "Anytime! Feel free to ask me more.",
+        "Glad I could help!",
+    };
+    }
 }
+
+
+
+
 

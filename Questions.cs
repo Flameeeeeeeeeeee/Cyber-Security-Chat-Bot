@@ -64,35 +64,35 @@ namespace CyberSecurityBotGUI.QuizLogic
                     "B",
                     "Correct! 2FA adds an extra step to verify your identity, increasing security."
             ),
-
+               //6
                 new QuizQuestion(
                     "Which of the following is a strong password?",
-                    new List<string> { "A) Password123", "B) qwerty", "C) 123456", "D) P@55w0rd!2025" },
+                    new List<string> { "A) Password123", "B) qwerty", "C) 123456", "D) P@55w0rd_!2025!" },
                     "D",
                     "Right! Strong passwords include letters, numbers, and special characters."
                 ),
-
+                //7
                 new QuizQuestion(
                     "What should you do before clicking on a link in an email?",
                     new List<string> { "A) Check the sender's email address", "B) Click immediately", "C) Forward to friends", "D) Reply asking for verification" },
                     "A",
                     "Correct! Always verify the sender to avoid phishing scams."
                 ),
-
+                //8
                 new QuizQuestion(
                     "What is the purpose of a firewall?",
                     new List<string> { "A) To cool down your computer", "B) To prevent unauthorized access", "C) To speed up internet", "D) To store passwords" },
                     "B",
                     "Exactly! Firewalls help block unauthorized access to your network."
                 ),
-
+                //9
                 new QuizQuestion(
                     "Which of these is NOT a sign of a phishing attempt?",
                     new List<string> { "A) Urgent requests for personal info", "B) Poor grammar and spelling", "C) Email from known contacts", "D) Suspicious links" },
                     "C",
                     "Right! Emails from known contacts are usually safe, but always stay cautious."
                 ),
-
+                //10
                 new QuizQuestion(
                     "How often should you update your passwords?",
                     new List<string> { "A) Never", "B) Every 1-3 months", "C) Once a year", "D) Only when hacked" },

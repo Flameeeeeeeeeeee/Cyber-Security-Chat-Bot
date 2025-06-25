@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 using CyberSecurityBotGUI.Data;
+using CyberSecurityBotGUI.Logic;
+
 namespace CyberSecurityBotGUI.QuizLogic
 {
     public class QuizManager
@@ -11,6 +13,8 @@ namespace CyberSecurityBotGUI.QuizLogic
         private int _currentQuestionIndex;
         private int _score;
         private bool _isQuizActive;
+        public int Score => _score;
+        public int TotalQuestions => _questions.Count;
 
         public QuizManager()
         {

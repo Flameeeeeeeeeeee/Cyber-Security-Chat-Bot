@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows;
 using CyberSecurityBotGUI; // Ensure your ChatBot.cs is under this namespace
 using CyberSecurityBotGUI.Logic;
@@ -27,7 +28,7 @@ namespace CyberSecurityBotGUI
             AddBotMessage("Welcome! Please let me know what your name is and we can get started!");
         }
 
-        private void SendButton_Click(object sender, RoutedEventArgs e)
+        private async void SendButton_Click(object sender, RoutedEventArgs e)
         {
             string userInput = UserInputTextBox.Text.Trim();
 
@@ -35,12 +36,24 @@ namespace CyberSecurityBotGUI
             {
                 AddUserMessage(userInput); // Show user's input in chat box
 
-                string botResponse = chatBot.ProcessUserInput(userInput);// Get response from ChatBot.cs
-                AddBotMessage(botResponse); // Show bot response
+                string botResponse = chatBot.ProcessUserInput(userInput); // Get response from chatbot logic
 
+                if (botResponse == "exit") // Special signal from chatbot to quit
+                {
+                    AddBotMessage("Goodbye! 👋 Stay safe out there.");
+                    await Task.Delay(1000); // Optional delay so user sees the message
+                    Application.Current.Shutdown();
+                    return;
+                }
+
+                AddBotMessage(botResponse); // Show bot response
                 UserInputTextBox.Clear(); // Clear input after sending
             }
         }
+
+
+
+
 
         // Adds user's message to the ChatDisplayTextBox
         private void AddUserMessage(string message)

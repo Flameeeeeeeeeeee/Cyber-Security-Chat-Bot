@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 
 namespace CyberSecurityBotGUI.Logic
 {
@@ -12,36 +8,44 @@ namespace CyberSecurityBotGUI.Logic
         private readonly List<string> _log = new List<string>();
         private const int MaxEntries = 10;
 
-        
-        // Adds a new entry to the activity log with a timestamp.
-        // Keeps only the latest 10 entries for clarity.
-       
         public void Log(string message)
         {
-            string timestamped = $"{DateTime.Now:HH:mm:ss} - {message}";
             if (_log.Count >= MaxEntries)
                 _log.RemoveAt(0);
-            _log.Add(timestamped);
+            _log.Add(message);
         }
 
+        // Appends additional info to the last log entry
+        public void AppendToLast(string extra)
+        {
+            if (_log.Count == 0) return;
 
-        // Returns the recent activity log as a string.
+            _log[_log.Count - 1] += $" {extra}";
+        }
 
         public string GetRecentLog()
         {
             if (_log.Count == 0)
                 return "📝 No recent activities logged yet.";
 
-            return "📜 Here's a summary of recent actions:\n" + string.Join("\n", _log);
+            var numberedLog = new List<string>();
+            for (int i = 0; i < _log.Count; i++)
+            {
+                numberedLog.Add($"{i + 1}. {_log[i]}");
+            }
+
+            return "📜 Here's a summary of recent actions:\n" + string.Join("\n", numberedLog);
         }
 
-        
-        // Clears all log entries. Useful for resets or testing.
-        
         public void Clear()
         {
             _log.Clear();
         }
+
+        public void LogQuizResult(int score, int totalQuestions)
+        {
+            string entry = $"Quiz completed: scored {score} out of {totalQuestions}";
+            Log(entry);
+        }
     }
 }
-

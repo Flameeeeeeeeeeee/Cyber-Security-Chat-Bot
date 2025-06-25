@@ -35,7 +35,7 @@ namespace CyberSecurityBotGUI.StartUpServices
         }
 
         
-        /// Returns an ASCII banner string (to be displayed in the UI).
+        // Returns an ASCII banner string (to be displayed in the UI).
         
         public static string GetAsciiArt()
         {

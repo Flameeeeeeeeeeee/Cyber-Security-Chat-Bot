@@ -31,3 +31,6 @@ The chatbot features an intuitive graphical interface and voice greeting support
 
 ## repo link 
 https://github.com/Flameeeeeeeeeeee/Cyber-Security-Chat-Bot.git
+
+## youtube video link
+https://youtu.be/1EQzeCS0AQE?si=TfPcdpzvA0dFmWuY
